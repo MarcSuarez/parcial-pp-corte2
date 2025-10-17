@@ -1,134 +1,132 @@
-# Calculadora Científica en Kotlin 🧮
+# 🧠 Parcial — Corte 2
 
-Este proyecto implementa una **Calculadora Científica** en **Kotlin**, aplicando los principios de la **Programación Orientada a Objetos (POO)**: **encapsulamiento**, **herencia** y **polimorfismo**.
-
----
-
-## 🚀 Requisitos
-
-Antes de ejecutar el proyecto, asegúrate de tener instalado:
-
-- [Kotlin](https://kotlinlang.org/docs/command-line.html)
-- [Java JDK 8 o superior](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
-- Sistema operativo compatible: **Linux**, **Windows** o **macOS**
-
-Verifica que Kotlin esté correctamente instalado ejecutando:
-
-```bash
-kotlin -version
-```
-
-Y para verificar Java:
-
-```bash
-java -version
-```
+Este repositorio contiene los **tres puntos del parcial** desarrollados en **Python** y **Kotlin**, aplicando conceptos de **Programación Orientada a Objetos (POO)** y **Sistemas Multiagentes**.
 
 ---
 
-## 📂 Estructura del Proyecto
+## 📁 Estructura del Proyecto
 
 ```
 parcial/
 │
-├── Calculadora.kt
-├── CalculadoraCientifica.kt
-├── Memoria.kt
-├── EvaluadorExpresiones.kt
-├── Main.kt
-└── README.md
+├── punto 1/   → Perceptrón basado en agentes (Python + Mesa)
+├── punto 2/   → Calculadora simple basada en agentes (Python + Mesa)
+└── punto 3/   → Calculadora científica con POO (Kotlin)
 ```
 
 ---
 
-## ⚙️ Cómo Compilar y Ejecutar
+## ⚙️ Requisitos Generales
 
-### 1️⃣ Compilar todos los archivos Kotlin
+### 🐍 Para los puntos 1 y 2
+- Python 3.10 o superior
+- Librerías indicadas en `requirements.txt`
+- (Opcional) Entorno virtual recomendado con Anaconda o venv
 
-Desde la terminal, entra a la carpeta del proyecto y ejecuta:
-
+Instalar dependencias con:
 ```bash
-kotlinc *.kt -include-runtime -d main.jar
+pip install -r requirements.txt
 ```
 
-Esto generará un archivo `main.jar` que contiene todo el proyecto compilado.
-
-### 2️⃣ Ejecutar el programa
-
-```bash
-java -jar main.jar
-```
-
-> 💡 Si obtienes el error:  
-> `no main manifest attribute, in main.jar`  
-> asegúrate de que tu archivo `Main.kt` contenga una función `fun main()` y que esté bien escrita.
-
----
-
-## 🧠 Principios POO aplicados
-
-- **Encapsulamiento:**  
-  Cada clase tiene sus propios atributos y métodos. Por ejemplo, la memoria de la calculadora está protegida dentro de `CalculadoraCientifica` y solo puede modificarse mediante métodos públicos.
-
-- **Herencia:**  
-  La clase `CalculadoraCientifica` **hereda** de `Calculadora`, reutilizando las operaciones básicas y extendiendo las funcionalidades con métodos científicos.
-
-- **Polimorfismo:**  
-  Se aplican sobrecargas de métodos (por ejemplo, `sumar()` y `restar()` para enteros y decimales). Esto permite usar el mismo nombre de método con diferentes tipos de datos.
+### ☕ Para el punto 3
+- Kotlin instalado en el sistema  
+  Verifica la instalación con:
+  ```bash
+  kotlin -version
+  ```
+- Java JDK 8 o superior  
+  Verifica con:
+  ```bash
+  java -version
+  ```
 
 ---
 
-## 🧾 Menú del Programa
+## 🧩 Punto 1 — Perceptrón basado en Agentes
 
-El programa principal (`Main.kt`) muestra un menú interactivo con opciones:
+### 📘 Descripción
+Simulación de un **modelo Perceptrón** utilizando la librería **Mesa (Python)**.  
+Cada agente representa una neurona que aprende mediante ajustes de pesos, visualizando su aprendizaje en una interfaz web.
 
-| Opción | Descripción |
-|:------:|--------------|
-| 1 | Suma |
-| 2 | Resta |
-| 3 | Multiplicación |
-| 4 | División |
-| 5 | Seno |
-| 6 | Coseno |
-| 7 | Tangente |
-| 8 | Potencia |
-| 9 | Raíz cuadrada |
-| 10 | Logaritmos y exponenciales |
-| 11 | Operaciones con memoria |
-| 12 | Evaluar expresión completa |
-| 0 | Salir del programa |
+### ▶️ Ejecución
 
----
+1. Entra a la carpeta del punto 1:
+   ```bash
+   cd "punto 1"
+   ```
 
-## 🧪 Ejemplo de Uso
+2. Instala dependencias:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-```bash
-$ java -jar main.jar
+3. Ejecuta el programa:
+   ```bash
+   python run.py
+   ```
 
-==== CALCULADORA CIENTÍFICA ====
-1. Sumar
-2. Restar
-3. Multiplicar
-4. Dividir
-5. Seno
-6. Coseno
-...
-Seleccione una opción: 1
-Ingrese el primer número: 5
-Ingrese el segundo número: 3
-Resultado: 8.0
-```
+4. Abre en tu navegador la URL que aparecerá (por defecto `http://127.0.0.1:8521/`).
 
 ---
 
-## 🧰 Autor
+## 🧮 Punto 2 — Calculadora basada en Agentes
+
+### 📘 Descripción
+Una **calculadora simple** desarrollada también con **Mesa (Python)**, donde cada agente representa una operación matemática (suma, resta, multiplicación, división).  
+El modelo permite observar cómo los agentes cooperan para resolver cálculos distribuidos.
+
+### ▶️ Ejecución
+
+1. Entra a la carpeta del punto 2:
+   ```bash
+   cd "punto 2"
+   ```
+
+2. Instala dependencias:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Ejecuta el programa:
+   ```bash
+   python main.py
+   ```
+
+4. Abre la interfaz web en el enlace que indique la consola (por defecto `http://127.0.0.1:8521/`).
+
+---
+
+## 🧠 Punto 3 — Calculadora Científica con POO
+
+### 📘 Descripción
+Implementación de una **calculadora científica en Kotlin**, aplicando los principios de la **Programación Orientada a Objetos (POO)**:  
+**encapsulamiento**, **herencia** y **polimorfismo**.
+
+### ▶️ Ejecución
+
+1. Entra a la carpeta del punto 3:
+   ```bash
+   cd "punto 3"
+   ```
+
+2. Compila el proyecto:
+   ```bash
+   kotlinc *.kt -include-runtime -d calculadora.jar
+   ```
+
+3. Ejecuta el programa:
+   ```bash
+   java -jar calculadora.jar
+   ```
+
+### 💡 Nota
+Asegúrate de tener instalado Kotlin y Java.  
+Si ves el error `no main manifest attribute, in calculadora.jar`, revisa que tu `Main.kt` contenga una función `fun main()` válida.
+
+---
+
+## 📄 Autor
 
 **Marc Suárez Molina**  
 Proyecto académico — Programación Orientada a Objetos (POO)  
 Universidad / Curso: *Parcial — Segundo Corte*
-
----
-
-## 📄 Licencia
-
-Este proyecto se distribuye bajo la licencia **MIT**, por lo que puede ser usado y modificado libremente con fines educativos.
